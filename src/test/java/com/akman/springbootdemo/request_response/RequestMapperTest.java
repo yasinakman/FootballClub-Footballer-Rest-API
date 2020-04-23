@@ -93,7 +93,7 @@ public class RequestMapperTest {
     private FootballClubRequest testCreateFootballClubRequest() {
         return FootballClubRequest.builder()
                 .id(1L)
-                .currency(Currency.TL.getValue())
+                .currency(Currency.TL)
                 .clubManager("Fatih Terim")
                 .clubName("Galatasaray")
                 .build();

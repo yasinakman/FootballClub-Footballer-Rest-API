@@ -1,5 +1,6 @@
 package com.akman.springbootdemo.model.footballer;
 
+import com.akman.springbootdemo.model.enums.Currency;
 import com.akman.springbootdemo.utils.LocalDateSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.swagger.annotations.ApiModelProperty;
@@ -28,7 +29,7 @@ public class FootballerResponse {
     @ApiModelProperty(notes = "Contract fee")
     private Double contractFee;
     @ApiModelProperty(notes = "Currency")
-    private String currency;
+    private Currency currency;
     @ApiModelProperty(notes = "Career start date")
     private LocalDate careerStartDate;
     @JsonSerialize(using = LocalDateSerializer.class)

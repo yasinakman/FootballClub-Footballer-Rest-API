@@ -1,5 +1,6 @@
 package com.akman.springbootdemo.model.footbalclub;
 
+import com.akman.springbootdemo.model.enums.Currency;
 import com.akman.springbootdemo.model.footballer.FootballerResponse;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -21,7 +22,7 @@ public class FootballClubResponse {
     @ApiModelProperty(notes = "club manager")
     private String clubManager;
     @ApiModelProperty(notes = "Currency")
-    private String currency;
+    private Currency currency;
     @ApiModelProperty(notes = "footballer")
     private List<FootballerResponse> footballers;
 }

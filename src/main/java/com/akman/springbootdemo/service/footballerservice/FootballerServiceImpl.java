@@ -1,5 +1,6 @@
 package com.akman.springbootdemo.service.footballerservice;
 
+import com.akman.springbootdemo.model.enums.Currency;
 import com.akman.springbootdemo.model.footbalclub.FootballClub;
 import com.akman.springbootdemo.model.footbalclub.FootballClubNameRequest;
 import com.akman.springbootdemo.model.footballer.Footballer;
@@ -62,7 +63,7 @@ public class FootballerServiceImpl implements FootballerService {
             long elapsedMonth = ChronoUnit.MONTHS.between(footballerToSaveRequest.getCareerStartDate(), LocalDate.now());
             Double transferFee = (elapsedMonth * 100000d) / footballerToSaveRequest.getAge();
             Double contractFee = transferFee * 1.1d;
-            String currency = footballClub.getCurrency();
+            Currency currency = footballClub.getCurrency();
             footballer.setTransferFee(transferFee);
             footballer.setContractFee(contractFee);
             footballer.setCurrency(currency);

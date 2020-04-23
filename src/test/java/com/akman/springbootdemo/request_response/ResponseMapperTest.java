@@ -68,7 +68,7 @@ public class ResponseMapperTest {
     private FootballClub testCreateFootballClub() {
         return FootballClub.builder()
                 .id(1L)
-                .currency(Currency.TL.getValue())
+                .currency(Currency.TL)
                 .clubManager("Fatih Terim")
                 .clubName("Galatasaray SK")
                 .footballers(Collections.singletonList(Footballer.builder()
@@ -82,7 +82,7 @@ public class ResponseMapperTest {
     private FootballClub testCreateFootballClub_footballerNull() {
         return FootballClub.builder()
                 .id(1L)
-                .currency(Currency.TL.getValue())
+                .currency(Currency.TL)
                 .clubManager("Fatih Terim")
                 .clubName("Galatasaray SK")
                 .build();
@@ -98,7 +98,7 @@ public class ResponseMapperTest {
                 .contractBeginDate(LocalDate.of(2020, 7, 1))
                 .contractEndDate(LocalDate.of(2023, 7, 1))
                 .contractFee(100000d)
-                .currency(Currency.TL.getValue())
+                .currency(Currency.TL)
                 .transferFee(100000d)
                 .footballClub(FootballClub.builder()
                         .id(3L)

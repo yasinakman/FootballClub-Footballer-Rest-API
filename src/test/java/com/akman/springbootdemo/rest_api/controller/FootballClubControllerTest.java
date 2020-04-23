@@ -135,7 +135,7 @@ public class FootballClubControllerTest {
                 .id(1L)
                 .clubName("Galatasaray SK")
                 .clubManager("Fatih Terim")
-                .currency(Currency.TL.getValue())
+                .currency(Currency.TL)
                 .build();
     }
 
@@ -152,7 +152,7 @@ public class FootballClubControllerTest {
                 .id(1L)
                 .clubName("Galatasaray SK")
                 .clubManager("Fatih Terim")
-                .currency(Currency.TL.getValue())
+                .currency(Currency.TL)
                 .footballers(Collections.singletonList(FootballerResponse.builder()
                         .id(2L)
                         .firstName("Radamel")

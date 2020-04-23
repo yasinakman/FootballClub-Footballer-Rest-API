@@ -5,8 +5,10 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.WebApplicationInitializer;
 
@@ -16,7 +18,11 @@ import javax.annotation.PostConstruct;
         PackageMarker.class,
         com.akman.springbootdemo.PackageMarker.class})
 @EnableTransactionManagement
-@RequiredArgsConstructor
+@EnableJpaRepositories(
+        basePackages = {"com.akman.springbootdemo.repository"}
+)
+@EntityScan(basePackages = {"com.akman.springbootdemo.model"})
+        @RequiredArgsConstructor
 public class SpringBootDemoApplication extends SpringBootServletInitializer implements WebApplicationInitializer {
 
     public static void main(String[] args) {

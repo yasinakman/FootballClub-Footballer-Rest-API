@@ -1,5 +1,6 @@
 package com.akman.springbootdemo.model.footballer;
 
+import com.akman.springbootdemo.model.enums.Currency;
 import com.akman.springbootdemo.model.footbalclub.FootballClub;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -7,15 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @ToString(exclude = {"footballClub"})
@@ -48,7 +41,8 @@ public class Footballer {
     private Double contractFee;
 
     @Column(name = "Currency")
-    private String currency;
+    @Enumerated(EnumType.STRING)
+    private Currency currency;
 
     @Column(name = "Career_start_date")
     private LocalDate careerStartDate;
